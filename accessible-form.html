@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Creating an accessible form UI using HTML and CSS">
+  <meta name="author" content="Efuetanu Collins Avwerosuo">
+  <meta name="keywords" content="Frontend Roadmaps, HTML, CSS">
+  <title>Accessible Form UI</title>
+  <link rel="stylesheet" href="accessible-form.css
+  ">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="form-container" role="form">
+    <div class="form-section">
+      <div class="form-group">
+          <label for="fullname" class="label">Full Name</label>
+          <input
+          type="text"
+          id="fullname"
+          class="input"
+          placeholder="What should we call you?"
+          required
+          aria-required="true"
+          autocomplete="name"
+          >
+          <div class="error-message" id="fullname-error">Please enter your full name</div>
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="label">Email</label>
+        <input
+        type="email"
+        id="email"
+        class="input"
+        value="john@doe.com"
+        required
+        aria-required="true"
+        aria-invalid="true"
+        autocomplete="email"
+        >
+        <div class="error-message" id="email-error">Email is alreday taken</div>
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="label">Enter Password</label>
+        <div class="password-container">
+          <input
+          type="password"
+          id="password"
+          class="input"
+          placeholder="xxxxxx"
+          required
+          aria-required="true"
+          autocomplete="new-password">
+
+          <button
+          type="button"
+          class="toggle-password"
+          aria-label="Toggle password visibility"
+          aria-pressed="false">👁️</button>
+        </div>
+        <div class="error-message" id="password-error">Password does not meet requirements</div>
+      </div>
+
+      <div class="form-group">
+        <label for="confirm-password" class="label">Confirm Password</label>
+        <div class="password-container">
+          <input
+            type="password"
+            id="confirm-password"
+            class="input"
+            placeholder="xxxxxx"
+            required
+            aria-required="true"
+            autocomplete="new-password"
+          >
+          <button
+            type="button"
+            class="toggle-password"
+            aria-label="Toggle password visibility"
+            aria-pressed="false"
+            >👁️
+          </button>
+        </div>
+        <div class="error-message" id="confirm-password-error">Passwords do not match</div>
+      </div>
+
+      <div class="requirements" role="region" aria-label="Password requirements">
+        <h3>Password Requirements:</h3>
+
+          <ul class="requirement-list">
+            <li class="requirement-item" data-met="false">At least 8 characters long</li>
+            <li class="requirement-item" data-met="false">Contains at least one uppercase letter</li>
+            <li class="requirement-item" data-met="false">Contains at least one number</li>
+            <li class="requirement-item" data-met="false">Contains at least one specil character</li>
+            <li class="requirement-item" data-met="false">Passwords match</li>
+
+          </ul>
+      </div>
+
+      <button type="submit"class="update-button">Update Profile</button>
+
+
+    </div>
+
+    <div class="progress-section">
+      <div class="progress-circle" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" >
+        <svg viewBox="0 0 100 100">
+          <circle class="progress-circle-bg" cx="50" cy="50" r="45"/>
+          <circle class="progress-circle-fill" cx="50" cy="50" r="45"
+              stroke-dasharray="186.5 282.6"/>
+        </svg>
+        <div style="position: absolute; top:50%; left:50%; transform: translate(-50%, -50%);">
+          <span style="font-size: 24px;">65%</span>
+        </div>
+      </div>
+      <div class="progreess-label">Profile Completeness</div>
+      <div class="checklist">
+        <div class="checklist-item">Create Account</div>
+        <div class="checklist-item">Update Roadmap Progress</div>
+        <div class="checklist-item">Setup Public Profile</div>
+        <div class="checklist-item pending">Complete your first project</div>
+        <div class="checklist-item pending">Invite your Friends</div>
+
+
+
+      </div>
+    </div>
+
+</div>
+
+</body>
+</html>
